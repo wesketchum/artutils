@@ -97,6 +97,8 @@ if __name__=="__main__":
 
     print "Now you should do the following: "
     name = os.getenv("USER")
+    print "git remote remove origin"
+    print "git remote add origin <location_of_your_git_repo>"
     print "cd $MRB_SOURCE"
     print "mv ubuseranalysis "+my_project
     print "mrb uc"
