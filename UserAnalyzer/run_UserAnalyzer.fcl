@@ -31,7 +31,7 @@ physics: {
   }
   analyzers: {
      # ParameterSets for zero or more analyzer modules
-     userana: { module_type: UserAnalysis
+     userana: { module_type: UserAnalyzer
      	      	input_param: "optional" }
   }
 
