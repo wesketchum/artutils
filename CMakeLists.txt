@@ -52,7 +52,7 @@ include(BuildPlugins)
 
 # ADD SOURCE CODE SUBDIRECTORIES HERE
 add_subdirectory(UserAnalysis)
-add_subdirectory(UserAnalysisLArSoft)
+add_subdirectory(UserAnalyzer)
 
 # tests
 add_subdirectory(test)
