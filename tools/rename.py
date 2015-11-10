@@ -3,9 +3,9 @@
 import sys, argparse, os
 
 parser = argparse.ArgumentParser(description='Rename UserAnalysis example')
-parser.add_argument('name',metavar='<class name>',type=str, nargs=1,
+parser.add_argument('name',metavar='<class name 1>',type=str, nargs=1,
                     help='New name for your analysis class (replaces UserAnalysis). Must follow C++ naming conventions.')
-parser.add_argument('art_name',metavar='<class name>',type=str, nargs=1,
+parser.add_argument('art_name',metavar='<class name 2>',type=str, nargs=1,
                     help='New name for your art::EDAnalyzer class (replaces UserAnalyzer). Must follow C++ naming conventions.')
 parser.add_argument('namespace',metavar='<namespace>',type=str, nargs=1,
                     help='New namspace for this analysis class (replaces test). Must be all lower case, no punctuation.')
@@ -60,6 +60,9 @@ def inplace_change(filename, old_string, new_string):
 
 if __name__=="__main__":
     args = parser.parse_args()
+
+    if( args.name==args.art_name):
+        sys.exit("Can't have two similar class names.")
 
     if( CheckName(args)==False or CheckArtName(args)==False or CheckNamespace(args)==False or CheckProject(args)==False ):
         sys.exit("Exiting.")
