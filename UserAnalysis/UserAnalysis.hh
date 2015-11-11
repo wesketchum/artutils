@@ -12,6 +12,8 @@
 
 #include <string>
 
+#include "TTree.h"
+
 namespace test{
   class UserAnalysis;
 }
@@ -27,10 +29,12 @@ public:
   virtual ~UserAnalysis(){};
 
   void RunAnalysis();
+  void SetupOutputTree(TTree*);
   
  private:
 
   std::string fAlgName;
+  TTree*      fTree;
   
   void PrintInfo();
 

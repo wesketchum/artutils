@@ -17,6 +17,9 @@
 #include "fhiclcpp/ParameterSet.h"
 #include "messagefacility/MessageLogger/MessageLogger.h"
 
+#include "art/Framework/Services/Optional/TFileService.h"
+
+#include "TTree.h"
 
 #include "UserAnalysis/UserAnalysis.hh"
 
@@ -54,7 +57,10 @@ test::UserAnalyzer::UserAnalyzer(fhicl::ParameterSet const & p)
   :
   EDAnalyzer(p)  // ,
  // More initializers here.
-{}
+{
+  art::ServiceHandle<art::TFileService> tfs;
+  fMyAnalysisObj.SetupOutputTree(tfs->make<TTree>("myanatree","MyAnalysis Tree"));
+}
 
 void test::UserAnalyzer::analyze(art::Event const & e)
 {
