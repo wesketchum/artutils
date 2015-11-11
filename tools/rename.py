@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys, argparse, os
+from useful_info import *
 
 parser = argparse.ArgumentParser(description='Rename UserAnalysis example')
 parser.add_argument('name',metavar='<class name 1>',type=str, nargs=1,
@@ -11,7 +12,6 @@ parser.add_argument('namespace',metavar='<namespace>',type=str, nargs=1,
                     help='New namspace for this analysis class (replaces test). Must be all lower case, no punctuation.')
 parser.add_argument('project',metavar='<project name>',type=str, nargs=1,
                     help='New name for this project (replaces ubuseranalysis). Must be all lower case, no punctuation.')
-
 
 def CheckLowercase(word):
     for c in word[0]:
@@ -97,19 +97,9 @@ if __name__=="__main__":
     os.rename("UserAnalyzer/run_UserAnalyzer.fcl","UserAnalyzer/run_"+my_analyzer_name+".fcl")
     os.rename("UserAnalyzer",my_analyzer_name)
 
-
-    print "Now you should do the following: "
-    name = os.getenv("USER")
-    print "git remote remove origin"
-    print "git remote add origin <location_of_your_git_repo>"
-    print "cd $MRB_SOURCE"
-    print "mv ubuseranalysis "+my_project
-    print "mrb uc"
-    print "cd $MRB_BUILDDIR"
-    print "mrb z; mrbsetenv"
-    print "mrb i -j8"
-    print "mrbslp"
-    
+    PrintNewOriginRepoInstructions()
+    PrintMoveProject(my_project)
+    PrintBuildInstructions()
     
     #os.mkdir(my_class_name)
     #os.mkdir(my_class_name+"LArSoft")
