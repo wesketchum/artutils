@@ -77,6 +77,9 @@ if __name__=="__main__":
     inplace_change("CMakeLists.txt","UserAnalyzer",my_analyzer_name)
     inplace_change("CMakeLists.txt","ubuseranalysis",my_project)
 
+    #ups file
+    inplace_change("ups/product_deps","ubuseranalysis",my_project)
+
     #now UserAnalysis directory
     inplace_change("UserAnalysis/CMakeLists.txt","UserAnalysis",my_class_name)
     inplace_change("UserAnalysis/UserAnalysis.hh","UserAnalysis",my_class_name)
@@ -96,6 +99,9 @@ if __name__=="__main__":
     os.rename("UserAnalyzer/UserAnalyzer_module.cc","UserAnalyzer/"+my_analyzer_name+"_module.cc")
     os.rename("UserAnalyzer/run_UserAnalyzer.fcl","UserAnalyzer/run_"+my_analyzer_name+".fcl")
     os.rename("UserAnalyzer",my_analyzer_name)
+
+    #top level CMake file
+    inplace_change("../CMakeLists.txt","ubuseranalysis",my_project)
 
     PrintNewOriginRepoInstructions()
     PrintMoveProject(my_project)
