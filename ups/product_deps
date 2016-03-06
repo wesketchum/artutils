@@ -32,7 +32,7 @@ flcdir  product_dir     fcl
 # Add the dependent product and version
 
 product          version
-uboonecode		v04_29_01
+uboonecode		v04_36_00_01
 #gcc		v4_9_3
 cetbuildtools   v4_17_00       -       only_for_build
 end_product_list
