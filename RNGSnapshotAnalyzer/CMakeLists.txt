@@ -2,17 +2,6 @@
 
 art_make(
 	  MODULE_LIBRARIES
-			ub_UserAnalysis
-#			larcore_Geometry
-#	  	        larcore_Geometry_Geometry_service
-#		        lardata_Utilities
-#	                uboone_Geometry
-#			larana_OpticalDetector
-#			lardata_OpticalDetectorData
-#                      lardata_RawData
-#			lardata_RecoBase
-#			larsim_Simulation
-#			larsim_SimulationBase
                         ${ART_FRAMEWORK_CORE}
 			${ART_FRAMEWORK_IO_SOURCES}
                         ${ART_FRAMEWORK_PRINCIPAL}
@@ -30,7 +19,7 @@ art_make(
                         ${ROOT_XMLIO}
                         ${ROOT_GDML}
                         ${ROOT_BASIC_LIB_LIST}
-			${SIMULATIONBASE}
+#			${SIMULATIONBASE}
 )							   
 
 install_headers()
