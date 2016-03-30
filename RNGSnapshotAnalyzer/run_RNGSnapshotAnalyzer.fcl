@@ -32,7 +32,7 @@ physics: {
   analyzers: {
      # ParameterSets for zero or more analyzer modules
      rngana: { module_type: RNGSnapshotAnalyzer
-     	      	InputLabels: [ "rns::DataFeb2016RecoStage1" ]
+     	      	InputLabels: [ "rns::DataFeb2016RecoStage3" ]
 		PrintAllStates: true }
   }
 

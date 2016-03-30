@@ -72,7 +72,7 @@ void util::RNGsnapshotAnalyzer::analyze(art::Event const & e)
     rngHandles.resize(fInputLabels.size());
     for(size_t i_l=0; i_l<fInputLabels.size(); ++i_l)
       if(!e.getByLabel(fInputLabels[i_l],rngHandles[i_l]))
-	throw cet::exception("util::RNGsnapshotAnalyzer") << "Invalid handle for InputTag: " << fInputLabels[i_l];
+	throw cet::exception("util::RNGsnapshotAnalyzer") << "Invalid handle for " << fInputLabels[i_l] << std::endl;
   }
   //else, we are just gonna look for all of the RNGsnapshots in the event
   else{
