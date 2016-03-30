@@ -1,8 +1,11 @@
-# ubuseranalysis
-Skeleton analysis class for starting a LArSoft analyzer
+# artutils
 
-UserAnalysis: a simple analysis class that you can write your own piece of code in
-UserAnalyzer: a simple LArSoft Analyzer that calls the UserAnalysis object above
-tools/rename.py: a script to rename your area so that you can set up your own development
 
-Do "python tools/rename.py -h" for help
+Collection of art-centric utilities. You can download this package directly in mrb using:
+'mrb g https://github.com/wesketchum/artutils.git'
+If you are not using uboonecode, you will likely need to change your ups/product_deps area
+to not rely on uboonecode. Pick appropriate values.
+
+Description of what's here:
+---RNGSnapshotAnalyzer: print out instances of RNGsnapshot collections in events
+
